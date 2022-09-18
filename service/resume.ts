@@ -1,5 +1,5 @@
 import { IResume, IResumeRepository } from '../interfaces/resume';
-import repository from '../repository/resume';
+import { resumeRepository } from '../repository';
 
 const factory = (repository: IResumeRepository) => ({
   getResume: () => {
@@ -10,4 +10,4 @@ const factory = (repository: IResumeRepository) => ({
   }
 });
 
-export default factory(repository);
+export default factory(resumeRepository);

@@ -25,7 +25,7 @@ export interface IEducation {
 export interface IExperience {
   companyInfo: string;
   customerInfo: string;
-  customerInfoTitle: number;
+  customerInfoTitle: string;
   title: string;
   methodologies: Array<string>;
   responsibilities: Array<string>;
@@ -41,11 +41,11 @@ export interface ILanguage {
 }
 
 export interface IResume {
-  technologies: Array<ITechnology>;
   achievements: Array<IAchievement>;
-  education: Array<IEducation>;
+  technologies: Array<ITechnology>;
   experience: Array<IExperience>;
   languages: Array<ILanguage>;
+  education: Array<IEducation>;
 }
 
 export interface IResumeRepository {

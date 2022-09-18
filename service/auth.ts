@@ -1,5 +1,5 @@
-import repository from '../repository/auth';
 import { IAuthRepository } from '../interfaces/auth';
+import { authRepository } from '../repository';
 
 const factory = (repository: IAuthRepository) => ({
   signup: (email: string, password: string, name: string) => {
@@ -10,4 +10,4 @@ const factory = (repository: IAuthRepository) => ({
   }
 });
 
-export default factory(repository);
+export default factory(authRepository);

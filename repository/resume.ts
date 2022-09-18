@@ -8,7 +8,7 @@ export default {
     if (!resume) {
       throw new HttpError(404, 'Could not find resume!');
     }
-    return resume.content;
+    return resume;
   },
 
   updateResume: async function (resumeContent: IResume) {
@@ -16,7 +16,6 @@ export default {
     if (!resume) {
       throw new HttpError(404, 'Could not find resume!');
     }
-    resume.content = resumeContent;
-    await resume.save();
+    await Resume.save(resumeContent);
   }
 };

@@ -1,0 +1,44 @@
+{
+  "name": "auth-rest-api",
+  "version": "0.0.1",
+  "description": "Auth REST API",
+  "main": "index.ts",
+  "node": ">=16.17",
+  "scripts": {
+    "prepare": "husky install",
+    "start": "nodemon -r dotenv/config index.ts localhost 3020",
+    "spinup": "ts-node ./index.ts",
+    "format": "prettier --write .",
+    "debug": "nodemon --inspect app.js"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Anton Vlasik",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "node-uuid": "^1.4.8",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^14.14.20",
+    "@types/node-uuid": "^0.0.29",
+    "dotenv": "^16.0.0",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
+}

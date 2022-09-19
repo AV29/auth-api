@@ -1,3 +1,5 @@
+import { Model } from 'mongoose';
+
 export interface ISkill {
   title: string;
   description: string;
@@ -50,5 +52,16 @@ export interface IResume {
 
 export interface IResumeRepository {
   getResume: () => Promise<any>;
-  updateResume: (resume: IResume) => Promise<any>;
+  updateResume: (resume: string) => Promise<any>;
+}
+
+export interface IResumeDocument extends Document {
+  id: number;
+  updatedAt: number;
+  createdAt: number;
+  content: string;
+}
+
+export interface IResumeModel extends Model<IResumeDocument> {
+  save(err: any): any;
 }

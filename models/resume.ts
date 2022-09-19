@@ -1,17 +1,16 @@
-import data from '../mocks/data';
-import { IResume } from '../interfaces/resume';
+import mongoose from 'mongoose';
+import { IResumeDocument, IResumeModel } from '../interfaces/resume';
 
-export default class Resume {
-  static find(): Promise<IResume> {
-    return new Promise((resolve) => {
-      resolve(data.content);
-    });
-  }
+const Schema = mongoose.Schema;
 
-  static save(resumeContent: IResume): Promise<void> {
-    return new Promise((resolve) => {
-      data.content = resumeContent;
-      resolve();
-    });
-  }
-}
+const resumeSchema = new Schema<IResumeDocument>(
+  {
+    content: {
+      type: String,
+      required: true
+    }
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model<IResumeDocument, IResumeModel>('Resume', resumeSchema);

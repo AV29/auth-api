@@ -9,7 +9,7 @@
     "start": "nodemon -r dotenv/config index.ts localhost 3020",
     "spinup": "ts-node ./index.ts",
     "format": "prettier --write .",
-    "debug": "nodemon --inspect app.js"
+    "debug": "nodemon --inspect index.ts"
   },
   "private": true,
   "license": "UNLICENSED",

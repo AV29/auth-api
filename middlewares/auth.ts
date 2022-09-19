@@ -1,7 +1,7 @@
 import { NextFunction, Response } from 'express';
 import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 import { IAuthRequest } from '../interfaces/request';
-import { HttpError } from '../lib/errors.js';
+import { HttpError } from '../lib/errors';
 
 export default (req: IAuthRequest, res: Response, next: NextFunction) => {
   const authHeader = req.get('Authorization');

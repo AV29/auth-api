@@ -1,16 +1,12 @@
-import { Request, Response } from 'express';
-import uuid from 'node-uuid';
-import Logger from '../lib/logger';
+import { NextFunction, Request, Response } from 'express';
+import { HttpError } from '../lib/errors';
 
-export function allErrors(error: any, req: Request, res: Response) {
-  const errorObject = {
-    status: error.status || 500,
-    message: error.message,
-    key: uuid.v4()
-  };
-  Logger.error({ message: errorObject });
-  Logger.error(error.stack);
+export default async (error: any, req: Request, res: Response) => {
+  res.status(error.status || 500).json({ message: error.message });
+};
 
-  res.status(errorObject.status);
-  res.json(errorObject);
+export function notFound(req: Request, res: Response, next: NextFunction) {
+  res.status(404);
+
+  next(new HttpError(401, 'Not Found'));
 }
